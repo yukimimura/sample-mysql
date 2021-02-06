@@ -6,6 +6,7 @@ class HomesController < ApplicationController
     @homes = Home.all
     @ip = request.remote_ip
     @ip2 = request.env["HTTP_X_FORWARDED_FOR"]
+    @url = request.user_agent
   end
 
   # GET /homes/1 or /homes/1.json
