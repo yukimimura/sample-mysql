@@ -2,7 +2,13 @@
 
 IPアドレス：<%= @ip %><br>
 IPアドレス：<%= @ip2 %><br>
-ユーザーエージェント：<%= @url %>
+ユーザーエージェント：<%= @url %><br>
+クッキー：<%= @cookie %>
+
+
+<% @users.each do |u| %>
+  <%= u.name %>
+<% end %>
 
 <h1>Homes</h1>
 

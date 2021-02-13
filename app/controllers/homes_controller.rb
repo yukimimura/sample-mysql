@@ -4,9 +4,13 @@ class HomesController < ApplicationController
   # GET /homes or /homes.json
   def index
     @homes = Home.all
+    @users = User.all
     @ip = request.remote_ip
     @ip2 = request.env["HTTP_X_FORWARDED_FOR"]
-    @url = request.user_agent
+    @url = request.accept_encoding
+    # cookies[:user_name] = "david"
+    cookies.permanent[:user_name] = "Jamie"
+    @cookie = request.cookies
   end
 
   # GET /homes/1 or /homes/1.json
